@@ -18,3 +18,9 @@ A simple blog application built with Node.js, Express, and EJS templating engine
 - EJS (Embedded JavaScript Templates)
 - Method Override
 - HTML/CSS
+
+## Installation
+
+1. Clone the repository
+```bash
+git clone <https://github.com/AYU-17/blogmake.git>
