@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= post.title %>
+    </title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;margin: 20px;background-color: chartreuse;
+            /* background-image: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"); */
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            color: #007BFF;text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;margin-top: 10px;
+        }
+        input,textarea {
+            width: 100%;padding: 10px;margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;border: none;cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .home-btn{
+            margin-top: 20px;padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;border: none;cursor: pointer;
+        }
+        .home-btn:hover{
+            background-color: blue;
+        }
+        .btn {
+        padding: 8px 16px;
+        margin: 5px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .edit-btn {
+        background-color: #007BFF;
+    }
+    .edit-btn:hover {
+        background-color: blue;
+    }
+    .delete-btn {
+        background-color: #dc3545;
+    }
+    .delete-btn:hover {
+        background-color: red;
+    }
+    </style> 
+</head>
+
+<body>
+    <h1>
+        <%= post.title %>
+    </h1>
+    <p>by <%= post.author %>
+    <br><%= post.content %></p>
+    <div class="actions">
+        <a href="/edit/<%= post.title %>" class="btn edit-btn">Edit</a>
+        <a href="/" class="home-btn">home</a>
+        <form action="/post/<%= post.title %>?_method=DELETE" method="POST" >
+            <button type="submit" class="btn delete-btn">Delete</button>
+        </form>
+        
+    </div>
+    
+</body>
+
+</html>

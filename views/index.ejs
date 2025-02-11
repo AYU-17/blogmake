@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;margin: 20px;background-color:chartreuse;
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            color: #007BFF;text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;margin-top: 10px;
+        }
+        input,textarea {
+            width: 100%;padding: 10px;margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;border: none;cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Blog</h1>
+    <a href="/new">CREATE A NEW POST</a>
+    <ul>
+        <% posts.forEach(post=> { %>
+            <li>
+                <a href="/post/<%= post.title.toLowerCase().replace(/\s+/g, '-') %>">
+                    <%= post.title %>
+                </a>
+                by <%= post.author %>
+            </li>
+            <% }) %>
+    </ul>
+</body>
+
+</html>
